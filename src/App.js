@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
@@ -25,6 +27,12 @@ function App() {
   // 1. 변경할 일이 없는 데이터들, 굳이 html에 표기가 필요없는
   // 데이터들은 그냥 변수에 저장해도 됨
 
+  let [따봉, 따봉변경] = useState(0);
+  //state 변경하는 법, 등호 사용 금지 -> state 변경함수를 사용함. 
+  //state변경함수(새로운state)
+  //onClick={}안엔 함수넣어야함
+
+ 
 
   //return()안에는 병렬로 태그 2개이상 기입 금지
   return (
@@ -32,8 +40,11 @@ function App() {
       <div className="black-nav">
         <h4>ReactBlog</h4>
       </div>
+
+      <button onClick={ () => { {b(['여자코트 추천', '강남 우동맛집', '파이썬 독학'])} }}></button>
+
       <div className='list'>
-        <h4>{ 글제목[0] }</h4>
+        <h4>{ 글제목[0] } <span onClick={ () => {{ 따봉변경(따봉+1) }} }>👍</span> { 따봉 } </h4>
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
